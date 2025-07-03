@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">13</td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">132,017</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="1">testscript.AdminUsersTest</td><td><a href="#m0">verifyTheUserIsAbleToCreateTheAdminUsers</a></td><td rowspan="1">1751478616530</td><td rowspan="1">13889</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">testscript.AdminUsersTest</td><td><a href="#m1">verifyTheUserIsAbleToCreateTheAdminUsers</a></td><td rowspan="1">1751478635527</td><td rowspan="1">4680</td></tr><tr class="passedeven"><td><a href="#m2">verifyTheUserIsAbleToUpdateTheAdminUsers</a></td><td rowspan="1">1751478644098</td><td rowspan="1">4898</td></tr><tr class="passedodd"><td rowspan="4">testscript.LoginTest</td><td><a href="#m3">verifyTheUserIsAbleToLoginUsingInalidUsername_validPassword</a></td><td rowspan="1">1751478699805</td><td rowspan="1">1012</td></tr><tr class="passedodd"><td><a href="#m4">verifyTheUserIsAbleToLoginUsingInvalidUsername_InvalidPassword</a></td><td rowspan="1">1751478704519</td><td rowspan="1">1149</td></tr><tr class="passedodd"><td><a href="#m5">verifyTheUserIsAbleToLoginUsingValidCredentials</a></td><td rowspan="1">1751478709336</td><td rowspan="1">1870</td></tr><tr class="passedodd"><td><a href="#m6">verifyTheUserIsAbleToLoginUsingValidUsername_InvalidPassword</a></td><td rowspan="1">1751478715273</td><td rowspan="1">948</td></tr><tr class="passedeven"><td rowspan="1">testscript.LogoutTest</td><td><a href="#m7">isUserIsAbleToLogOut</a></td><td rowspan="1">1751478720114</td><td rowspan="1">2396</td></tr><tr class="passedodd"><td rowspan="1">testscript.ManageCategoryTest</td><td><a href="#m8">verifyTheUserIsAbleToAddCategoryInformations</a></td><td rowspan="1">1751478600183</td><td rowspan="1">10835</td></tr><tr class="passedeven"><td rowspan="2">testscript.ManageContactTest</td><td><a href="#m9">verifyTheUserIsAbleToDisplayContactUsInformations</a></td><td rowspan="1">1751478653113</td><td rowspan="1">4695</td></tr><tr class="passedeven"><td><a href="#m10">verifyTheUserIsAbleToUpdateContactUsInformations</a></td><td rowspan="1">1751478661930</td><td rowspan="1">5067</td></tr><tr class="passedodd"><td rowspan="1">testscript.ManageFooterTest</td><td><a href="#m11">verifyTheUserIsAbleToUpdateManageFooterTextInformation</a></td><td rowspan="1">1751478691809</td><td rowspan="1">4296</td></tr><tr class="passedeven"><td rowspan="2">testscript.ManageNewsTest</td><td><a href="#m12">verifyTheUserIsAbleToEnterTheNews</a></td><td rowspan="1">1751478670759</td><td rowspan="1">4177</td></tr><tr class="passedeven"><td><a href="#m13">verifyTheUserIsAbleToUpdateTheNews</a></td><td rowspan="1">1751478683889</td><td rowspan="1">3614</td></tr></tbody>
+</table>
+<h2>Test</h2><h3 id="m0">testscript.AdminUsersTest#verifyTheUserIsAbleToCreateTheAdminUsers</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;alert alert-success alert-dismissible&apos;]&quot;}
+  (Session info: chrome=137.0.7151.122)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bd2677b631cb8208acbffdbd82bed1bc, findElement {value=//div[@class=&apos;alert alert-success alert-dismissible&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.122, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\DELL~1\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49643}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49643/devtoo..., se:cdpVersion: 137.0.7151.122, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bd2677b631cb8208acbffdbd82bed1bc
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+	at pages.AdminUsersPage.displayAlertMessage(AdminUsersPage.java:68)
+	at testscript.AdminUsersTest.verifyTheUserIsAbleToCreateTheAdminUsers(AdminUsersTest.java:46)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testscript.AdminUsersTest#verifyTheUserIsAbleToCreateTheAdminUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testscript.AdminUsersTest#verifyTheUserIsAbleToUpdateTheAdminUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testscript.LoginTest#verifyTheUserIsAbleToLoginUsingInalidUsername_validPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testscript.LoginTest#verifyTheUserIsAbleToLoginUsingInvalidUsername_InvalidPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testscript.LoginTest#verifyTheUserIsAbleToLoginUsingValidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">testscript.LoginTest#verifyTheUserIsAbleToLoginUsingValidUsername_InvalidPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">testscript.LogoutTest#isUserIsAbleToLogOut</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">testscript.ManageCategoryTest#verifyTheUserIsAbleToAddCategoryInformations</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">testscript.ManageContactTest#verifyTheUserIsAbleToDisplayContactUsInformations</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">testscript.ManageContactTest#verifyTheUserIsAbleToUpdateContactUsInformations</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">testscript.ManageFooterTest#verifyTheUserIsAbleToUpdateManageFooterTextInformation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">testscript.ManageNewsTest#verifyTheUserIsAbleToEnterTheNews</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">testscript.ManageNewsTest#verifyTheUserIsAbleToUpdateTheNews</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testscript.AdminUsersTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="verifyTheUserIsAbleToUpdateTheAdminUsers"/>
+          <include name="verifyTheUserIsAbleToCreateTheAdminUsers"/>
+          <include name="driverQuit"/>
+        </methods>
+      </class> <!-- testscript.AdminUsersTest -->
+      <class name="testscript.LogoutTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="isUserIsAbleToLogOut"/>
+          <include name="driverQuit"/>
+        </methods>
+      </class> <!-- testscript.LogoutTest -->
+      <class name="testscript.ManageNewsTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="driverQuit"/>
+          <include name="verifyTheUserIsAbleToEnterTheNews"/>
+          <include name="verifyTheUserIsAbleToUpdateTheNews"/>
+        </methods>
+      </class> <!-- testscript.ManageNewsTest -->
+      <class name="testscript.ManageContactTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="verifyTheUserIsAbleToUpdateContactUsInformations"/>
+          <include name="driverQuit"/>
+          <include name="verifyTheUserIsAbleToDisplayContactUsInformations"/>
+        </methods>
+      </class> <!-- testscript.ManageContactTest -->
+      <class name="testscript.ManageCategoryTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="verifyTheUserIsAbleToAddCategoryInformations"/>
+          <include name="driverQuit"/>
+        </methods>
+      </class> <!-- testscript.ManageCategoryTest -->
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="verifyTheUserIsAbleToLoginUsingValidCredentials"/>
+          <include name="verifyTheUserIsAbleToLoginUsingInvalidUsername_InvalidPassword"/>
+          <include name="verifyTheUserIsAbleToLoginUsingInalidUsername_validPassword"/>
+          <include name="verifyTheUserIsAbleToLoginUsingValidUsername_InvalidPassword"/>
+          <include name="driverQuit"/>
+        </methods>
+      </class> <!-- testscript.LoginTest -->
+      <class name="testscript.ManageFooterTest">
+        <methods>
+          <include name="browserInitialisation"/>
+          <include name="verifyTheUserIsAbleToUpdateManageFooterTextInformation"/>
+          <include name="driverQuit"/>
+        </methods>
+      </class> <!-- testscript.ManageFooterTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
