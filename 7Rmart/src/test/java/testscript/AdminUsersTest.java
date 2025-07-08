@@ -7,13 +7,16 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AdminUsersPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base{
+	public AdminUsersPage adminuserspage;
+	public HomePage homepage;
    
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description="Verify that an authorized user can successfully create a new Admin account via the user management interface.")
 	public void verifyTheUserIsAbleToCreateTheAdminUsers() throws IOException
 	{
 		        //String username="Ranjith";
@@ -26,7 +29,16 @@ public class AdminUsersTest extends Base{
 				//String pass=ExcelUtility.getStringData(1, 1, "adminuserspage");
 				
 				LoginPage loginpage=new LoginPage(driver);
-				loginpage.enterTheUserName(username);
+				loginpage.enterTheUserName(username).enterThePassword(password);
+				homepage=loginpage.clickTheSignInButton();
+				adminuserspage=homepage.clickMoreInformationAdmin();
+				FakerUtility fakerutility=new FakerUtility();
+				String adminusername=fakerutility.creatARandomFirstName();
+				String adminpassword=fakerutility.creatARandomFirstName();
+				
+				adminuserspage.clickNewButton().enterUserName(adminusername).enterPassword(adminpassword).selectUserType().saveAdminUsers();
+				
+				/*loginpage.enterTheUserName(username);
 				loginpage.enterThePassword(password);
 				loginpage.clickTheSignInButton();
 				
@@ -42,12 +54,12 @@ public class AdminUsersTest extends Base{
 				adminuserspage.enterUserName(adminusername);
 				adminuserspage.enterPassword(adminpassword);
 				adminuserspage.selectUserType();
-				adminuserspage.saveAdminUsers();
+				adminuserspage.saveAdminUsers();*/
 				boolean alertmsg=adminuserspage.displayAlertMessage();
-				Assert.assertTrue(alertmsg);
+				Assert.assertTrue(alertmsg,"user is failed to create the username and the password");
 	}
 	
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description="Verify that an authorized user can successfully update a new Admin account via the user management interface.")
 	public void verifyTheUserIsAbleToUpdateTheAdminUsers() throws IOException
 	{
 		String username=ExcelUtility.getStringData(1, 0, "loginpage");
@@ -59,11 +71,11 @@ public class AdminUsersTest extends Base{
 		loginpage.clickTheSignInButton();
 		
 		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
-		adminuserspage.clickMoreInformationAdmin();
+		adminuserspage=homepage.clickMoreInformationAdmin();
 		adminuserspage.editAdminUsers();
 		adminuserspage.updateAdminUsers();
 		
 		boolean alert=adminuserspage.displayAlert();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,"user is failed to update the username and the password");
 	}
 }

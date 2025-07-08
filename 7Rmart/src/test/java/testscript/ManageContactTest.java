@@ -10,7 +10,7 @@ import pages.ManageContactPage;
 import utilities.ExcelUtility;
 @Test
 public class ManageContactTest extends Base
-{    @Test
+{    @Test(description="Verify that the user can update and save Contact Us information successfully.")
      public void verifyTheUserIsAbleToUpdateContactUsInformations() throws IOException
      {
     	String username=ExcelUtility.getStringData(1, 0, "loginpage");
@@ -33,9 +33,9 @@ public class ManageContactTest extends Base
  		managecontactpage.addressManageContact(manageaddress);
  		managecontactpage.updateManageContact();
  		boolean alertmsg=managecontactpage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,"Contact information not updated as expected");
        }
-     @Test
+     @Test(description="Verify that the user can display Contact Us information successfully.")
      public void verifyTheUserIsAbleToDisplayContactUsInformations() throws IOException
      {
     	String username=ExcelUtility.getStringData(1, 0, "loginpage");
@@ -52,6 +52,6 @@ public class ManageContactTest extends Base
  		managecontactpage.updateManageContact();
  		
     	boolean alertmsg=managecontactpage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,"Contact information not displayed as expected");
      }
 }

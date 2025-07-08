@@ -18,7 +18,7 @@ public class ManageCategoryPage
 	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
 	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
 	@FindBy(xpath="//button[@type='submit']")WebElement signin;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']//parent::li/a")WebElement moreinfo;
+	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")WebElement newbtn;
 	@FindBy(xpath="//input[@id='category']")WebElement category;
 	@FindBy(xpath="//li[@id='134-selectable']")WebElement selectgrp;
@@ -34,31 +34,29 @@ public class ManageCategoryPage
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void moreInfoManageCategory()
-	{
-		PageUtility pageutility=new PageUtility();
-		pageutility.javaSriptClick(driver, moreinfo);		//moreinfo.click();
-		
-	}
 	
-	public void newButton()
+	
+	public ManageCategoryPage  newButton()
 	{
 		newbtn.click();
+		return this;
 	}
 	
-	public void categoryInformation(String catgry)
+	public ManageCategoryPage  categoryInformation(String catgry)
 	{
 		category.clear();
 		category.sendKeys(catgry);
+		return this;
 	}
 	
-	public void selectGroup()
+	public ManageCategoryPage  selectGroup()
 	{
 		selectgrp.click();
+		return this;
 		
 	}
 	
-	public void imageUpload() throws AWTException
+	public ManageCategoryPage  imageUpload() throws AWTException
 	{
 		WaitUtility waitutility=new WaitUtility();
 		waitutility.waitForElementToBeClickable(driver, choosefilebtn);		
@@ -66,14 +64,16 @@ public class ManageCategoryPage
 		FileUploadUtility fileupload=new FileUploadUtility();
 		//fileupload.fileuploadUsingRobertClass(choosefilebtn, Constants.IMAGEFILE);
 		fileupload.fileUploadUsingSendKeys(choosefilebtn, Constants.IMAGEFILE);
+		return this;
 		
 	}
 	
-	public void saveCategoryInformations()
+	public ManageCategoryPage  saveCategoryInformations()
 	{
 
 		PageUtility pageutility=new PageUtility();
 		pageutility.javaSriptClick(driver, savebtn);         //savebtn.click();
+		return this;
 	}
 	
 	public boolean isAlertMessageIsDisplayed()

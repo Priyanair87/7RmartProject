@@ -3,14 +3,18 @@ package testscript;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
+	
+	public HomePage homepage;
      
-	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"})
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"},description="Verify that login success when an valid username and valid password are entered.")
 	 public void verifyTheUserIsAbleToLoginUsingValidCredentials() throws IOException
 	 {
 		//String username="admin";
@@ -20,14 +24,16 @@ public class LoginTest extends Base {
 		String password=ExcelUtility.getStringData(1, 1, "loginpage");
 		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+		loginpage.enterTheUserName(username).enterThePassword(password);
+		homepage=loginpage.clickTheSignInButton();
+		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
-		loginpage.clickTheSignInButton();
+		loginpage.clickTheSignInButton();*/
 		boolean dashboardloaded=loginpage.isDashBoardDisplayed();
 		Assert.assertTrue(dashboardloaded);
 		
 	 }
-	@Test
+	@Test(description="Verify that login fails when an valid username and invalidvalid password are entered.")
 	public void verifyTheUserIsAbleToLoginUsingValidUsername_InvalidPassword() throws IOException
 	 {
 		//String username="admin";
@@ -44,7 +50,7 @@ public class LoginTest extends Base {
 		Assert.assertTrue(alert, "Home Page Not Loaded");               // Validates expected results using Assert class
 		
 	 }
-	@Test
+	@Test(description="Verify that login fails when an invalid username and validvalid password are entered.")
 	public void verifyTheUserIsAbleToLoginUsingInalidUsername_validPassword() throws IOException
 	 {
 		//String username="adm";
@@ -61,14 +67,14 @@ public class LoginTest extends Base {
 		Assert.assertTrue(alert, "Home Page Not Loaded");
 		
 	 }
-	@Test
-	public void verifyTheUserIsAbleToLoginUsingInvalidUsername_InvalidPassword() throws IOException
+	@Test(dataProvider="login data provider",description="Verify that login fails when an invalid username and invalidvalid password are entered.")
+	public void verifyTheUserIsAbleToLoginUsingInvalidUsername_InvalidPassword(String username,String password) throws IOException
 	 {
 		//String username="adm";
 		//String password="adm"; 
 	
-		String username=ExcelUtility.getStringData(4, 0, "loginpage");
-		String password=ExcelUtility.getStringData(4, 1, "loginpage");
+		//String username=ExcelUtility.getStringData(4, 0, "loginpage");
+		//String password=ExcelUtility.getStringData(4, 1, "loginpage");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterTheUserName(username);
@@ -78,6 +84,11 @@ public class LoginTest extends Base {
 		Assert.assertTrue(alert, "Home Page Not Loaded");
 		
 	 }
+	@DataProvider(name="login data provider")
+	public Object[][] dpmethod()
+	{
+		return new Object[][] {{"abc","abs"},{"avg","ngf"},{"hgf","ytd"}};
+	}
 }
 
 /*

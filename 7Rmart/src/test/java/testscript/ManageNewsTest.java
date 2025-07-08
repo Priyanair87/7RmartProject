@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
 	
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description="Verify that the user can display the news.")
 	
 	public void verifyTheUserIsAbleToEnterTheNews() throws IOException
 	{
@@ -35,11 +35,11 @@ public class ManageNewsTest extends Base{
 		managenewspage.enterNewsInformation(news);
 		managenewspage.saveNews();
 		boolean alertmessage=managenewspage.displayAlertMessage();
-		Assert.assertTrue(alertmessage);
+		Assert.assertTrue(alertmessage,"news not displayed as expected");
 		
 	}
 	
-	@Test(retryAnalyzer=retry.Retry.class)
+	@Test(retryAnalyzer=retry.Retry.class,description="Verify that the user can update the news.")
 	public void verifyTheUserIsAbleToUpdateTheNews() throws IOException
 	{
 		
@@ -58,7 +58,7 @@ public class ManageNewsTest extends Base{
 		managenewspage.displayAlert();
 		
 		boolean alertmsg=managenewspage.displayAlertMessage();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,"news not updated as expected");
 		
 	}
 }

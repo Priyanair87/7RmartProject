@@ -18,7 +18,7 @@ public class AdminUsersPage {
 	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
 	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
 	@FindBy(xpath="//button[@type='submit']")WebElement signin;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//parent::div/a")WebElement moreinfoadmin;
+	
 	@FindBy(xpath="//a[text()=' New']")WebElement newbtn;
 	@FindBy(xpath="//input[@id='username']")WebElement usernme;
 	@FindBy(xpath="//input[@id='password']")WebElement passwrd;
@@ -32,35 +32,37 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
     
-    public void clickMoreInformationAdmin()
-   {
-    	moreinfoadmin.click();
-   }
+   
     
-    public void clickNewButton()
+    public AdminUsersPage clickNewButton()
     {
   	 newbtn.click();
+  	 return this;
     }
     
-    public void enterUserName(String user)
+    public AdminUsersPage enterUserName(String user)
 	{
     	usernme.sendKeys(user);
+    	return this;
 	}
 	
-    public void enterPassword(String pass)
+    public AdminUsersPage enterPassword(String pass)
 	{
     	passwrd.sendKeys(pass);
+    	return this;
 	}
     
-    public void selectUserType()
+    public AdminUsersPage selectUserType()
 	{ 
     	PageUtility pageutility=new PageUtility();
     	pageutility.selectByIndex(usrtype, 2);          //  sc.selectByIndex(2);
+    	return this;
     }
     
-    public void saveAdminUsers()
+    public AdminUsersPage saveAdminUsers()
     {
     	savebtn.click();
+    	return this;
     }
     
     public boolean displayAlertMessage()

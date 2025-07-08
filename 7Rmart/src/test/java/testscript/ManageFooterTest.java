@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 public class ManageFooterTest extends Base
 {
 
-	@Test
+	@Test(description="Verify that the user can update and save Contact Us information successfully.")
 	public void verifyTheUserIsAbleToUpdateManageFooterTextInformation() throws IOException
 	{
 		String username=ExcelUtility.getStringData(1, 0, "loginpage");
@@ -37,6 +37,6 @@ public class ManageFooterTest extends Base
 		managefooterpage.updateFooterTextInfo();
 		
 		boolean alertmsg=managefooterpage.isAlertMessageIsDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,"Manage footer information not updated as expected");
 	}
 }
