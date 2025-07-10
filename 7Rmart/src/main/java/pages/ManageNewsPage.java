@@ -12,7 +12,7 @@ public class ManageNewsPage
 	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
 	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
 	@FindBy(xpath="//button[@type='submit']")WebElement signin;
-	@FindBy(xpath=" //a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']//parent::li") WebElement moreinfo;
+	
 	@FindBy(xpath=" //a[text()=' New']") WebElement newoption;
 	@FindBy(xpath=" //textarea[@id='news']") WebElement enternews;
 	@FindBy(xpath=" //button[@name='create']") WebElement save;
@@ -24,24 +24,24 @@ public class ManageNewsPage
 		PageFactory.initElements(driver, this);
 	}
     
-   public void clickMoreInformation()
-   {
-	 moreinfo.click();
-    }
    
-   public void clickNewButton()
+   
+   public ManageNewsPage clickNewButton()
    {
 	 newoption.click();
+	 return this;
    }
    
-  public void enterNewsInformation(String news)
+  public ManageNewsPage enterNewsInformation(String news)
    {
 	 enternews.sendKeys(news);
+	 return this;
    }
   
-  public void saveNews()
+  public ManageNewsPage saveNews()
    {
 	 save.click();
+	 return this;
    }
   
   public boolean displayAlertMessage()
@@ -53,18 +53,20 @@ public class ManageNewsPage
    @FindBy(xpath="//button[@name='update']") WebElement update;
    @FindBy(xpath="//h5[text()=' Alert!']") WebElement alertmsg;
   
-   public void editNews()
+   public ManageNewsPage editNews()
    {
 	   edit.click();
+	   return this;
    }
    
-   public void updateNews()
+   public ManageNewsPage updateNews()
    {
 	   update.click();
+	   return this;
    }
    
-   public boolean displayAlert()
+  /* public boolean displayAlert()
    {
 	   return alertmsg.isDisplayed();
-   }
+   }*/
 }

@@ -66,14 +66,20 @@ public class AdminUsersTest extends Base{
         String password=ExcelUtility.getStringData(1, 1, "loginpage");
         
         LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterTheUserName(username);
+        loginpage.enterTheUserName(username).enterThePassword(password);
+        homepage=loginpage.clickTheSignInButton();
+        adminuserspage=homepage.clickMoreInformationAdmin();
+        adminuserspage.editAdminUsers().updateAdminUsers();
+   
+        
+		/*loginpage.enterTheUserName(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickTheSignInButton();
 		
 		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
 		adminuserspage=homepage.clickMoreInformationAdmin();
 		adminuserspage.editAdminUsers();
-		adminuserspage.updateAdminUsers();
+		adminuserspage.updateAdminUsers();*/
 		
 		boolean alert=adminuserspage.displayAlert();
 		Assert.assertTrue(alert,"user is failed to update the username and the password");

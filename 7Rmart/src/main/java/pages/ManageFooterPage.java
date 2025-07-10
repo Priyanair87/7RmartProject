@@ -10,7 +10,7 @@ public class ManageFooterPage {
 	@FindBy(xpath="//input[@placeholder='Username']")WebElement uname;
 	@FindBy(xpath="//input[@placeholder='Password']")WebElement pword;
 	@FindBy(xpath="//button[@type='submit']")WebElement signin;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-footertext']//parent::li/a")WebElement managefootermoreinfo;
+	
 	@FindBy(xpath="(//i[@class='fas fa-edit']//parent::a)[1]")WebElement action;
 	@FindBy(xpath="//textarea[@id='content']")WebElement address;
 	@FindBy(xpath="//input[@id='email']")WebElement email;
@@ -26,38 +26,40 @@ public class ManageFooterPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void moreInfoManageFooter()
-	{
-		managefootermoreinfo.click();
-	}
 	
-	public void actionButton()
+	
+	public ManageFooterPage actionButton()
 	{
 		action.click();
+		return this;
 	}
 	
-	public void addressFooterTextInfo(String add)
+	public ManageFooterPage addressFooterTextInfo(String add)
 	{
 		address.clear();
 		address.sendKeys(add);
+		return this;
 	}
 	
-	public void phonenumberFooterTextInfo(String phno)
+	public ManageFooterPage phonenumberFooterTextInfo(String phno)
 	{
 		phonenumber.clear();
 		phonenumber.sendKeys(phno);
+		return this;
 	}
 	
-	public void emailFooterTextInfo(String emailid)
+	public ManageFooterPage emailFooterTextInfo(String emailid)
 	{
 		email.clear();
 		email.sendKeys(emailid);
+		return this;
 	}
 	
 	
-	public void updateFooterTextInfo()
+	public ManageFooterPage updateFooterTextInfo()
 	{
 		update.click();
+		return this;
 	}
 	
 	public boolean isAlertMessageIsDisplayed()

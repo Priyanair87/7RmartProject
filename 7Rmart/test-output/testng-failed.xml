@@ -7,15 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testscript.LoginTest">
+      <class name="testscript.ManageCategoryTest">
         <methods>
           <include name="browserInitialisation"/>
-          <include name="verifyTheUserIsAbleToLoginUsingValidCredentials"/>
-          <include name="verifyTheUserIsAbleToLoginUsingInvalidUsername_InvalidPassword" invocation-numbers="2"/>
-          <include name="verifyTheUserIsAbleToLoginUsingValidUsername_InvalidPassword"/>
+          <include name="verifyTheUserIsAbleToAddCategoryInformations"/>
           <include name="driverQuit"/>
         </methods>
-      </class> <!-- testscript.LoginTest -->
+      </class> <!-- testscript.ManageCategoryTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

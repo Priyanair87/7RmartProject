@@ -74,14 +74,16 @@ public class AdminUsersPage {
     @FindBy(xpath="//button[@name='Update']")WebElement update;
     @FindBy(xpath="//h5[text()=' Alert!']")WebElement alert;
     
-    public void editAdminUsers()
+    public AdminUsersPage editAdminUsers()
     {
     	edit.click();
+    	return this;
     }
     
-    public void updateAdminUsers()
+    public AdminUsersPage updateAdminUsers()
     {
     	update.click();
+		return this;
     }
     
     public boolean displayAlert()
